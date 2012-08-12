@@ -13,7 +13,7 @@ TPMI_SMTP_OPTIONS = {
     :address        => "smtp.sendgrid.net",
     :port           => "587",
     :authentication => :plain,
-    :user_name      => 'patlu08@gmail.com',
+    :user_name      => 'pesto',
     :password       => 'orangesend',
     :domain         => 'www.orangesend.com',
 }
