@@ -25,6 +25,8 @@ post '/' do
   
   page_object.save
   
+  status 200
+  
 end
 
 get '/all' do
