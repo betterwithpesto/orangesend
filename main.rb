@@ -49,7 +49,7 @@ post '/' do
   
   doc = Nokogiri::HTML.parse(body)
   body = doc.xpath("//div[id='gmail_quote']")
-  body = @doc.css('div#gmail_quote')
+  body = body.css('div#gmail_quote')
   
   page_object = Page.create({
     :from => from,
