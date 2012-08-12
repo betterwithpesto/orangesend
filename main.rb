@@ -52,13 +52,13 @@ post '/' do
     :body => body
   })
   
-  x = page_object.create
+  x = page_object.save
   
   status 200
   
   email = JSON.parse(params[:envelope])['from']
   
-  send_email(email, subject.text, x.id)
+  send_email(email, subject.text, page_object.id)
   
 end
 
