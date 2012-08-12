@@ -31,7 +31,7 @@ end
 
 get '/page' do
   o = Page.find(params[:id])
-  "From: #{o.from}, Subject: #{o.subject}, Page: #{o.body.to_s}"
+  "From: #{o.from}, Subject: #{o.subject}, Headers: #{o.headers}, Page: #{o.body.to_s}"
 end
   
   
@@ -41,6 +41,7 @@ post '/' do
   from = params[:from]
   subject = params[:subject]
   body = params[:html]
+  headers = params[:headers]
   
   userEmail = from
   
@@ -51,6 +52,7 @@ post '/' do
     :from => from,
     :subject => subject,
     :body => body
+    :headers => headers
   })
   
   page_object.save
