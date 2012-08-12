@@ -43,7 +43,7 @@ post '/' do
   body = params[:html]
   
   doc = Nokogiri::HTML.parse(body)
-  body = doc.css('blockquote.gmail_quote').first.content
+  body = doc.first.content
   
   page_object = Page.create({
     :from => from,
