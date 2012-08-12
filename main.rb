@@ -43,7 +43,7 @@ post '/' do
   body = params[:html]
   
   doc = Nokogiri::HTML.parse(body)
-  body = doc.first.content
+  body = doc.content
   
   page_object = Page.create({
     :from => from,
