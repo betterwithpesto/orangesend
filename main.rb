@@ -40,7 +40,7 @@ post '/' do
  
   from = params[:from]
   subject = params[:subject]
-  page = params[:html]
+  body = params[:html]
   
   page_object = Page.create({
     :from => from,
