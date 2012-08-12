@@ -26,7 +26,7 @@ post '/' do
   
 end
 
-get '/all'
+get '/all' do
   Page.all.each do |curPage|
     "Something happened. something good."
   end  
