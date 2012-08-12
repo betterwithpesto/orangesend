@@ -27,7 +27,7 @@ end
 
 
 get '/' do
-  "<br /> <br /> <br /> <h2>Share you emails to your twitter of facebook <br /> Forward any email from your inbox to add@orangesend.com <br /> then we'll send you a link to it </h2>"
+  "<br /> <br /> <br /> <h2>Share you emails to your twitter or facebook <br /> Forward any email from your inbox to add@orangesend.com <br /> then we'll send you a link to it </h2>"
 end
 
 get '/page' do
