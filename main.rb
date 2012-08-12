@@ -24,7 +24,7 @@ post '/' do
   page_object = Page.create({
     :from => from,
     :subject => subject
-    :page => escape_html(page)
+    :body => escape_html(page)
   })
   
   page_object.save
