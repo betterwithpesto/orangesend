@@ -11,7 +11,7 @@ get '/' do
 end
 
 get '/page' do
-  o = Page.find(:id => params[:id])
+  o = Page.find(params[:id])
   "From: #{o.from}, Subject: #{o.subject}"
 end
   
