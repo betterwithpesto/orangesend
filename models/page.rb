@@ -8,7 +8,6 @@ class Page
   key :from, String
   key :subject, String
   key :body, Binary
-  key :headers, String
   
   timestamps!
 end
