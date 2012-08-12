@@ -20,7 +20,9 @@ post '/' do
   from = params[:from]
   subject = params[:subject]
   page = params[:html]
-  
+  puts "*"*80
+  puts params[:html]
+  puts "*"*80
   page_object = Page.create({
     :from => from,
     :subject => subject,
