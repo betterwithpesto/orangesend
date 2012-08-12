@@ -4,8 +4,9 @@ MongoMapper.database.authenticate('orangesend','orangesend')
 
 class Page
   include MongoMapper::Document
+  key :from, String
+  key :subject, String
   key :page, String
-  key :email, String
-
+  
   timestamps!
 end
