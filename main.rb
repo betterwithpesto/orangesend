@@ -12,7 +12,13 @@ end
 
 post '/' do
  
-  puts params.inspect
+  params.each do |key, value|
+    puts "-"*80
+    puts "Key: #{key}"
+    puts "-"*80
+    puts "Value: #{value}"
+    puts "*"*80
+  end
   from = params[:from]
   subject = params[:subject]
   page = params[:html]
