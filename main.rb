@@ -31,7 +31,7 @@ end
 
 get '/page' do
   o = Page.find(params[:id])
-  "From: #{o.from}, Subject: #{o.subject}"
+  "From: #{o.from}, Subject: #{o.subject}, Page: #{o.page.to_s}"
 end
   
   
