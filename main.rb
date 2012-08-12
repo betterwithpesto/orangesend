@@ -4,7 +4,7 @@ require 'mongo_mapper'
 require 'pony'
 require 'nokogiri'
 require 'open-uri'
-require './model'
+require './models/page'
 
 get '/' do
   "Hello, World!"
@@ -27,7 +27,5 @@ post '/' do
 end
 
 get '/all' do
-  Page.all.each do |curPage|
-    "Something happened. something good."
-  end  
+  Page.all.map{|o| "From: #{o.from}, Subject: #{o.subject}"}.join("\n")
 end

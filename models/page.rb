@@ -1,0 +1,12 @@
+MongoMapper.connection = Mongo::Connection.new('alex.mongohq.com', 10054)
+MongoMapper.database = 'orangesend'
+MongoMapper.database.authenticate('orangesend','orangesend')
+
+class Page
+  include MongoMapper::Document
+  key :from, String
+  key :subject, String
+  key :page, String
+  
+  timestamps!
+end
