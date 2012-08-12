@@ -48,7 +48,7 @@ post '/' do
   puts "*"*80
   
   doc = Nokogiri::HTML.parse(body)
-  body = doc.css('div.gmail_quote').text.strip()
+  body = doc.css('div.gmail_quote').strip()
   
   page_object = Page.create({
     :from => from,
