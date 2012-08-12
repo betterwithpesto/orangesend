@@ -12,6 +12,7 @@ end
 
 post '/' do
  
+  puts params.inspect
   from = params[:from]
   subject = params[:subject]
   page = params[:html]
@@ -27,5 +28,5 @@ post '/' do
 end
 
 get '/all' do
-  Page.all.map{|o| "From: #{o.from}, Subject: #{o.subject}"}.join("\n")
+  Page.all.map{|o| "From: #{o.from}, Subject: #{o.subject}"}.join("<br />")
 end
