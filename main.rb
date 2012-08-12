@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'rubygems'
 require 'sinatra'
 require 'mongo_mapper'
@@ -5,6 +6,24 @@ require 'pony'
 require 'nokogiri'
 require 'open-uri'
 require './models/page'
+
+=begin
+TPMI_SMTP_OPTIONS = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "587",
+    :authentication => :plain,
+    :user_name      => 'patlu08@gmail.com',
+    :password       => 'orangesend',
+    :domain         => 'www.orangesend.com',
+}
+def send_email(to, subject, html_body, id)
+  Pony.mail(:to => to, :from => 'OrangeSend <email@orangesend.com>',
+    :subject => subject,
+    :html_body => "Here is a link to the that email page: ",
+    :via => :smtp, :via_options => TPMI_SMTP_OPTIONS
+  )
+end
+=end
 
 get '/' do
   "Hello, World!"
@@ -15,20 +34,25 @@ get '/page' do
   "From: #{o.from}, Subject: #{o.subject}"
 end
   
+  
+#right now using id for the url, might want to change this to a shortener  
 post '/' do
  
   from = params[:from]
   subject = params[:subject]
   page = params[:html]
+  
   page_object = Page.create({
     :from => from,
     :subject => subject,
-    :body => page.latin1_to_utf8
+    :body => String.to_mongo(page)
   })
   
   page_object.save
   
   status 200
+  
+  #send_email(from, subject.text, )
   
 end
 
