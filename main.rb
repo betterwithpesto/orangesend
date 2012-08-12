@@ -23,7 +23,7 @@ post '/' do
   page_object = Page.create({
     :from => from,
     :subject => subject,
-    :body => page.force_encoding("UTF-8")
+    :body => page
   })
   
   page_object.save
