@@ -10,13 +10,13 @@ get '/' do
   "Hello, World!"
 end
 
+get '/page' do
+  o = Page.find(:id => params[:id])
+  "From: #{o.from}, Subject: #{o.subject}"
+end
+  
 post '/' do
  
-  params.each do |key, value|
-    puts "<table border=\"1\"><tr><td>"
-    puts "Key: #{key}</td><td>"
-    puts "Value: #{value}</td></tr></table>"
-  end
   from = params[:from]
   subject = params[:subject]
   page = params[:html]
