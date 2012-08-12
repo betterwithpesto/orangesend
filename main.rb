@@ -42,7 +42,10 @@ post '/' do
   subject = params[:subject]
   body = params[:html]
   
+  userEmail = from
   
+  doc = Nokogiri::HTML.parse(body)
+  body = doc.css('gmail_quote').first.content.delete(userEmail)
   
   page_object = Page.create({
     :from => from,
