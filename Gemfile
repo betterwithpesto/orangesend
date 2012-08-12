@@ -1,4 +1,4 @@
-source :rubygems
+source: rubygems
 gem 'sinatra'
 gem 'bson'
 gem 'bson_ext'
