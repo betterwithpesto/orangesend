@@ -38,10 +38,10 @@ end
 #right now using id for the url, might want to change this to a shortener  
 post '/' do
  
-  from = params[:from]
+  from = params[:headers]
   subject = params[:subject]
   body = params[:html]
-  email = params[:headers]
+  
   
   puts "*"*80
   puts email
