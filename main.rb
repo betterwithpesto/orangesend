@@ -6,8 +6,9 @@ require 'pony'
 require 'nokogiri'
 require 'open-uri'
 require './models/page'
+require 'json'
 
-=begin
+
 TPMI_SMTP_OPTIONS = {
     :address        => "smtp.sendgrid.net",
     :port           => "587",
@@ -19,11 +20,11 @@ TPMI_SMTP_OPTIONS = {
 def send_email(to, subject, html_body, id)
   Pony.mail(:to => to, :from => 'OrangeSend <email@orangesend.com>',
     :subject => subject,
-    :html_body => "Here is a link to the that email page: ",
+    :html_body => ("Here is a link to the that email page: www.orangesend.com/page?id=" + id),
     :via => :smtp, :via_options => TPMI_SMTP_OPTIONS
   )
 end
-=end
+
 
 get '/' do
   "Hello, World!"
@@ -51,11 +52,13 @@ post '/' do
     :body => body
   })
   
-  page_object.save
+  x = page_object.create
   
   status 200
   
-  #send_email(from, subject.text, )
+  email = JSON.parse(params[:envelope])['from']
+  
+  send_email(from, subject.text, email, x.id)
   
 end
 
