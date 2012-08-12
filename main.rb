@@ -41,7 +41,11 @@ post '/' do
   from = params[:from]
   subject = params[:subject]
   body = params[:html]
+  email = params[:headers]
   
+  puts "*"*80
+  puts email
+  puts "*"*80
   
   doc = Nokogiri::HTML.parse(body)
   body = doc.css('gmail_quote').first.content.delete()
