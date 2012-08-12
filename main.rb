@@ -9,8 +9,3 @@ require './model'
 get '/' do
   "Hello, World!"
 end
-
-post '/' do
-  puts "lololol"
-    
-end

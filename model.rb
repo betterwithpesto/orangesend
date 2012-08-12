@@ -1,6 +1,6 @@
-MongoMapper.connection = Mongo::Connection.new('staff.mongohq.com', 10092)
-MongoMapper.database = 'sendwiki'
-MongoMapper.database.authenticate('sendwiki','sendwiki')
+MongoMapper.connection = Mongo::Connection.new('alex.mongohq.com', 10054)
+MongoMapper.database = 'orangesend'
+MongoMapper.database.authenticate('orangesend','orangesend')
 
 class page
   include MongoMapper::Document
