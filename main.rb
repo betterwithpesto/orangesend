@@ -41,6 +41,9 @@ post '/' do
   from = params[:from]
   subject = params[:subject]
   body = params[:html]
+  puts "*"*80
+  body.encoding.name
+  puts "*"*80
   
   page_object = Page.create({
     :from => from,
