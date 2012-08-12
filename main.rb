@@ -44,7 +44,7 @@ post '/' do
   
   
   puts "*"*80
-  puts email
+  puts from
   puts "*"*80
   
   doc = Nokogiri::HTML.parse(body)
