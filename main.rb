@@ -58,7 +58,7 @@ post '/' do
   
   email = JSON.parse(params[:envelope])['from']
   
-  send_email(email, subject.text, page_object.id)
+  send_email(email, subject, page_object.id)
   
 end
 
