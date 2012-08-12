@@ -38,7 +38,7 @@ end
 #right now using id for the url, might want to change this to a shortener  
 post '/' do
  
-  from = params[:headers]
+  from = params[:from]
   subject = params[:subject]
   body = params[:html]
   
@@ -48,7 +48,7 @@ post '/' do
   puts "*"*80
   
   doc = Nokogiri::HTML.parse(body)
-  body = doc.css('gmail_quote').first.content.delete()
+  body = doc.css('div.gmail_quote').text.strip()
   
   page_object = Page.create({
     :from => from,
