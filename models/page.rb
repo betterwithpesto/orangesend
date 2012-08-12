@@ -7,7 +7,7 @@ class Page
   include MongoMapper::Document
   key :from, String
   key :subject, String
-  key :body, String
+  key :body, Binary
   
   timestamps!
 end

@@ -45,7 +45,7 @@ post '/' do
   page_object = Page.create({
     :from => from,
     :subject => subject,
-    :body => String.to_mongo(page)
+    :body => body
   })
   
   page_object.save
