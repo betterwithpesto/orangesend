@@ -23,7 +23,7 @@ post '/' do
   page_object = Page.create({
     :from => from,
     :subject => subject,
-    :body => page
+    :body => page.latin1_to_utf8
   })
   
   page_object.save
