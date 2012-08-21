@@ -27,7 +27,8 @@ end
 
 
 get '/' do
-  "<br /> <br /> <br /> <h2>bleh blah Share your emails to your twitter or facebook <br /> Forward any email from your inbox to add@orangesend.com <br /> then we'll send you a link to it </h2>"
+  "<head><script type="text/javascript" src="//use.typekit.net/llo3fwm.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script></head><body><h2>Share your emails to your twitter or facebook <br /> Forward any email from your inbox to add@orangesend.com <br /> then we'll send you a link to it </h2></body>"
 end
 
 get '/page' do

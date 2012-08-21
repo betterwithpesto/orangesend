@@ -8,6 +8,6 @@ class Page
   key :from, String
   key :subject, String
   key :body, Binary
-  
+
   timestamps!
 end
