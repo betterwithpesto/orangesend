@@ -42,6 +42,7 @@ post '/' do
   from = params[:from]
   subject = params[:subject]
   body = params[:html]
+  charsets = params[:charsets]
   
   #doc = Nokogiri::HTML.parse(body)
   
@@ -51,6 +52,10 @@ post '/' do
     :subject => subject,
     :body => body
   })
+  
+  puts "*"*50
+  puts "charsets " + charsets
+  puts "*"*50
   
   x = page_object.save
   
