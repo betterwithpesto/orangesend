@@ -17,7 +17,7 @@ TPMI_SMTP_OPTIONS = {
     :password       => 'orangesend',
     :domain         => 'www.orangesend.com',
 }
-def send_email(to, subject, id)
+def send_email(to, subject, id, charsets)
   Pony.mail(:to => to, :from => 'OrangeSend <email@orangesend.com>',
     :subject => subject,
     :html_body => ("Here is a link to the that email page: www.orangesend.com/page?id=" + id),
@@ -27,6 +27,7 @@ end
 
 
 get '/' do
+  puts "hi"
   erb :home
 end
 
@@ -63,7 +64,7 @@ post '/' do
   
   email = JSON.parse(params[:envelope])['from']
   
-  send_email(email, subject, page_object.id)
+  send_email(email, subject, page_object.id, charsets)
   
 end
 
