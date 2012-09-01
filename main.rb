@@ -51,7 +51,8 @@ post '/' do
   page_object = Page.create({
     :from => from,
     :subject => subject,
-    :body => body
+    :body => body,
+    :charsets => charsets
   })
   
   puts "*"*50
