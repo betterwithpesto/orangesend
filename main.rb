@@ -33,9 +33,9 @@ end
 
 get '/page' do
   o = Page.find(params[:id])
-  "From: #{o.from}, Subject: #{o.subject}, Page: #{o.body.to_s}"
+  "<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  From: #{o.from}, Subject: #{o.subject}, Page: #{o.body.to_s}"
 end
-  
   
 #right now using id for the url, might want to change this to a shortener  
 post '/' do
